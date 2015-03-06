@@ -1,1 +1,5 @@
-h1 Home!
+#home.container
+  p See your team's availabilities in one view
+
+  button.skyblue
+    | Get Started

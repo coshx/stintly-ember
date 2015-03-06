@@ -2,7 +2,17 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  sassOptions: {
+    inputFile: 'app.sass',
+    outputFile: 'app.css',
+    includePaths: [
+      'bower_components/bourbon/app/assets/stylesheets/',
+      'bower_components/neat/app/assets/stylesheets/',
+      'vendor/semantic-ui-sass/stylesheets/semantic-ui'
+    ]
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

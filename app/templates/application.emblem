@@ -1,3 +1,5 @@
-h2#title Welcome to Ember.js
+= partial "layouts/header"
 
 = outlet
+
+= partial "layouts/footer"

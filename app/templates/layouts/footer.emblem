@@ -1,0 +1,5 @@
+footer
+  p.copyright
+    | Copyright © 
+    a href="http://www.coshx.com" target="_blank" Coshx Labs
+    |  2015 - All Rights Reserved
