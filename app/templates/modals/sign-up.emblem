@@ -1,0 +1,19 @@
+#sign-up.ui.modal
+  i.icon.close
+
+  .content
+    #modal-flash
+      each flash in controller.flashManager.modalMessages
+        flash-message message=flash.message type=flash.type
+
+    form.ui.form submit="signUp"
+      = input email
+      = input password as="password"
+      = input passwordConfirmation as="password"
+      = input organization_name 
+      = submit 'Register' class="skyblue"
+
+    / #account-instruction
+    /   section
+    /     p Already have an account?
+    /     a action="openLoginModal" class="green" Login

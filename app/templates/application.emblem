@@ -3,3 +3,5 @@
 = outlet
 
 = partial "layouts/footer"
+
+= outlet 'modal'

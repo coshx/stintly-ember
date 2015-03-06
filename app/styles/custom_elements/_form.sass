@@ -1,0 +1,11 @@
+.form
+  label, .error-message
+    display: inline-block !important
+
+  .error-message
+    color: $red
+    
+  .field:not(.error)
+    input:focus
+      border-color: $skyblue !important
+      box-shadow: 1px 0em 0em 0em $skyblue inset

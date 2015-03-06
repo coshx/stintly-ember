@@ -7,8 +7,7 @@ header
     #account-buttons
       button.white
         | Login
-      button.white
-        | Sign up
+      button.white click="openSignUpModal" Sign Up
 
   .hero
     h1 Stintly

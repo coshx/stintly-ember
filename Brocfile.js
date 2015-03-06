@@ -27,11 +27,19 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Semantic UI
+app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/dimmer.js')
+app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/modal.js')
+app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/transition.js')
+
 // Semantic UI Icon fonts
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.eot', { destDir: "assets/fonts/semantic-ui" })
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.otf', { destDir: "assets/fonts/semantic-ui" })
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.svg', { destDir: "assets/fonts/semantic-ui" })
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.ttf', { destDir: "assets/fonts/semantic-ui" })
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.woff', { destDir: "assets/fonts/semantic-ui" })
+
+// Ember EasyForm
+app.import('vendor/ember-easyForm.js')
 
 module.exports = app.toTree();
