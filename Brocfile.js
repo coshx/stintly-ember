@@ -27,4 +27,11 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Semantic UI Icon fonts
+app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.eot', { destDir: "assets/fonts/semantic-ui" })
+app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.otf', { destDir: "assets/fonts/semantic-ui" })
+app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.svg', { destDir: "assets/fonts/semantic-ui" })
+app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.ttf', { destDir: "assets/fonts/semantic-ui" })
+app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.woff', { destDir: "assets/fonts/semantic-ui" })
+
 module.exports = app.toTree();

@@ -1,3 +1,15 @@
 header
-  h1 Stintly
-  p The easiest way to track your team members' availabilities
+  nav.container
+    h1= link-to 'Stintly' 'home'
+    = link-to 'Pricing' 'pricing'
+    = link-to 'Demo' 'demo'
+
+    #account-buttons
+      button.white
+        | Login
+      button.white
+        | Sign up
+
+  .hero
+    h1 Stintly
+    p Your Team, Made Easier
