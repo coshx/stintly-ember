@@ -1,6 +1,11 @@
 `import config from '../config/environment'`
 
 class ApplicationRoute extends Ember.Route
+  beforeModel: ->
+    @._super()
+
+    return @csrf.fetchToken()
+
   actions:
     # willTransition: (transition) ->
       
