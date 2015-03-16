@@ -29,6 +29,7 @@ var app = new EmberApp({
 
 // Semantic UI
 app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/dimmer.js')
+app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/dropdown.js')
 app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/modal.js')
 app.import('vendor/semantic-ui-sass/javascripts/semantic-ui/transition.js')
 

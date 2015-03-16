@@ -1,0 +1,17 @@
+#login.ui.modal
+  i.icon.close
+
+  .content
+    #modal-flash
+      each flash in controller.flashManager.modalMessages
+        flash-message message=flash.message type=flash.type
+
+    form.ui.form submit="authenticate"
+      = input identification label="Email"
+      = input password as="password"
+      = submit 'Login' class="skyblue"
+
+    #account-instruction
+      section
+        p Forgot your password?
+        a click="resetPassword" class="green" Reset password

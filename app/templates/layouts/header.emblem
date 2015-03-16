@@ -4,10 +4,19 @@ header
     = link-to 'Pricing' 'pricing'
     = link-to 'Demo' 'demo'
 
-    #account-buttons
-      button.white
-        | Login
-      button.white click="openSignUpModal" Sign Up
+    if session.isAuthenticated
+      click-drop-down
+        #user-dropdown.ui.dropdown.pointing.top.left
+          i.large.circular.user.icon
+        
+          .menu
+            .item
+              a click="invalidateSession" Logout
+    else
+      #account-buttons
+        button.white click="openLoginModal" Login
+        button.white click="openSignUpModal" Sign Up
+
 
   .hero
     h1 Stintly

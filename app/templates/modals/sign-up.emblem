@@ -13,7 +13,7 @@
       = input organization_name 
       = submit 'Register' class="skyblue"
 
-    / #account-instruction
-    /   section
-    /     p Already have an account?
-    /     a action="openLoginModal" class="green" Login
+    #account-instruction
+      section
+        p Already have an account?
+        a action="openLoginModal" class="green" Login

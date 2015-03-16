@@ -6,4 +6,7 @@ class ApplicationController extends Ember.Controller
     openSignUpModal: ->
       @send('openModal', 'sign-up', 'sign-up') 
 
+    openLoginModal: ->
+      @send('openModal', 'login', 'login')
+
 `export default ApplicationController`

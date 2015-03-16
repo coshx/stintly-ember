@@ -1,6 +1,7 @@
 `import config from '../config/environment'`
+`import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin'`
 
-class ApplicationRoute extends Ember.Route
+class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
   beforeModel: ->
     @._super()
 
@@ -18,8 +19,15 @@ class ApplicationRoute extends Ember.Route
 
     #   @_super() 
 
+    sessionAuthenticationSucceeded: (arg) ->
+      @send('closeModal')
+
+    sessionAuthenticationFailed: (error) ->
+      @flashManager.setModalFlash('Invalid email or password', 'error')
+
+
     openModal: (modalName, controller) ->
-      console.log 'here yo'
+      console.log 'session', @session
       Ember.run.begin()
       @render('modals/' + modalName, {
         into: 'application'
@@ -31,16 +39,16 @@ class ApplicationRoute extends Ember.Route
       @flashManager.clearModalFlash()
       $('.ui.modal').modal('show')
 
-    # closeModal: ->
-    #   $(".modal").modal('hide')
-    #   @send('disconnectModal')
+    closeModal: ->
+      $(".modal").modal('hide')
+      @send('disconnectModal')
       
       
-    # disconnectModal: ->
-    #   $('.ui.modal').remove()
-    #   @disconnectOutlet(
-    #     outlet: 'modal'
-    #     parentView: 'application'
-    #   )
+    disconnectModal: ->
+      $('.ui.modal').remove()
+      @disconnectOutlet(
+        outlet: 'modal'
+        parentView: 'application'
+      )
 
 `export default ApplicationRoute`

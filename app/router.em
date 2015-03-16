@@ -7,4 +7,5 @@ Router.map ->
   @route 'home', path: '/'
   @route 'pricing', path: 'pricing'
   @route 'demo', path: 'demo'
+  
 `export default Router`
