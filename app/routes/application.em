@@ -1,14 +1,9 @@
 `import config from '../config/environment'`
-`import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin'`
 
-class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
+class ApplicationRoute extends Ember.Route
   beforeModel: ->
     @._super()
-
     @authManager.authenticate()
-    # if @session.isAuthenticated
-    #   $.get(config.APP.HOST + '/users/profile', {}, (response) ->
-    #   )
 
     return @csrf.fetchToken()
 
@@ -32,7 +27,6 @@ class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
 
 
     openModal: (modalName, controller) ->
-      console.log 'session', @session
       Ember.run.begin()
       @render('modals/' + modalName, {
         into: 'application'

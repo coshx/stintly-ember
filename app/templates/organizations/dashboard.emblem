@@ -1,2 +1,2 @@
-.container
+#dashboard.container
   h1= name
