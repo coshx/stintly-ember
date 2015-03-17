@@ -1,11 +1,13 @@
 header
   nav.container
     h1= link-to 'Stintly' 'home'
-    = link-to 'Pricing' 'pricing'
-    = link-to 'Demo' 'demo'
+
 
     if currentUser
       = link-to 'Dashboard' 'organizations.dashboard' currentUser.firstOrganizationId
+      = link-to 'People' 'organizations.people' currentUser.firstOrganizationId
+      = link-to 'Projects' 'organizations.projects' currentUser.firstOrganizationId
+
       click-drop-down
         #user-dropdown.ui.dropdown.pointing.top.left
           i.large.circular.user.icon
@@ -14,6 +16,9 @@ header
             .item
               a click="logout" Logout
     else
+      = link-to 'Pricing' 'pricing'
+      = link-to 'Demo' 'demo'
+
       #account-buttons
         button.white click="openLoginModal" Login
         button.white click="openSignUpModal" Sign Up
