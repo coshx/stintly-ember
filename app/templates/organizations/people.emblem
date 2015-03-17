@@ -1,2 +1,5 @@
 #people.container
   h1 People
+
+  = each person in content
+    h1= person.name
