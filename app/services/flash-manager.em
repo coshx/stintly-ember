@@ -6,7 +6,11 @@ class FlashManager extends Ember.Object
   setModalFlash: (message, type) ->
     @set('modalMessages', [])
     @modalMessages.pushObject({ message: message, type: type })
-    
+
+  setFlash: (message, type) ->
+    @set('normalMessages', [])
+    @normalMessages.pushObject({ message: message, type: type })
+
   clearFlash: ->
     @set('normalMessages', [])
     @clearModalFlash()

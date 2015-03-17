@@ -19,6 +19,15 @@ class ApplicationRoute extends Ember.Route
 
     #   @_super() 
 
+    error: (err) ->
+      if err.status == 401
+        @flashManager.setFlash(err.responseText, 'danger')
+
+        if err.responseText == "You are not authorized to perform this action."
+          @transitionTo('home')
+        else
+          @transitionTo('home')
+
     sessionAuthenticationSucceeded: (arg) ->
       @send('closeModal')
 
