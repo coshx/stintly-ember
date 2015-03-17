@@ -4,20 +4,16 @@ header
     = link-to 'Pricing' 'pricing'
     = link-to 'Demo' 'demo'
 
-    if session.isAuthenticated
+    if currentUser
+      = link-to 'Dashboard' 'organizations.dashboard' currentUser.firstOrganizationId
       click-drop-down
         #user-dropdown.ui.dropdown.pointing.top.left
           i.large.circular.user.icon
         
           .menu
             .item
-              a click="invalidateSession" Logout
+              a click="logout" Logout
     else
       #account-buttons
         button.white click="openLoginModal" Login
         button.white click="openSignUpModal" Sign Up
-
-
-  .hero
-    h1 Stintly
-    p Your Team, Made Easier

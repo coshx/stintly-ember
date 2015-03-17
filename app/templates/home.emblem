@@ -1,5 +1,10 @@
-#home.container
-  p See your team's availabilities in one view
+#home
+  .hero
+      h1 Stintly
+      p Your Team, Made Easier  
+  
+  .container
+    p See your team's availabilities in one view
 
-  button.skyblue
-    | Get Started
+    button.skyblue
+      | Get Started

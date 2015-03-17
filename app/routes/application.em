@@ -5,6 +5,11 @@ class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
   beforeModel: ->
     @._super()
 
+    @authManager.authenticate()
+    # if @session.isAuthenticated
+    #   $.get(config.APP.HOST + '/users/profile', {}, (response) ->
+    #   )
+
     return @csrf.fetchToken()
 
   actions:

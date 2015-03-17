@@ -19,17 +19,19 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth-devise'] = {
-    crossOriginWhitelist: ['http://localhost:3000'],
-    serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
-    tokenAttributeName: 'authentication_token',
-    identificationAttributeName: 'email'
-  };
-
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise',
     store: 'simple-auth-session-store:local-storage'
   };
+
+  ENV['simple-auth-devise'] = {
+    crossOriginWhitelist: ['http://localhost:3000'],
+    serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
+    tokenAttributeName: 'token',
+    identificationAttributeName: 'email'
+  };
+
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

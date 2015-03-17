@@ -18,10 +18,10 @@ class SignUpController extends Ember.ObjectController with EmberValidations.Mixi
       userParams = { user: { email: @model.email, organization_name: @model.organization_name, password: @model.password } }
 
       $.post(config.APP.HOST + "/users", userParams, (response) ->
-        self.get('session').authenticate('simple-auth-authenticator:devise', {
-          identification: self.email
-          password: self.password
-        })
+        user = response.user
+        self.authManager.setCurrentUser(user)
+        self.authManager.setAjaxHeader(user.authenication_token, user.id)
+        self.send('closeModal')
       ).error((response) ->
         error = response.responseJSON.users.join(", ")
         self.flashManager.setModalFlash(error, 'error')

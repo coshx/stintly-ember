@@ -6,8 +6,8 @@
       each flash in controller.flashManager.modalMessages
         flash-message message=flash.message type=flash.type
 
-    form.ui.form submit="authenticate"
-      = input identification label="Email"
+    form.ui.form submit="login"
+      = input email label="Email"
       = input password as="password"
       = submit 'Login' class="skyblue"
 
