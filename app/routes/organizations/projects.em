@@ -2,8 +2,6 @@
 
 class OrganizationProjectsRoute extends Ember.Route with AuthenticatedRoute
   model: (params, transition) ->
-  
-  setupController: (controller, model) ->
-    controller.set('organization', model)
+    @store.find('project', parent: transition.params.organizations.id)
 
 `export default OrganizationProjectsRoute`

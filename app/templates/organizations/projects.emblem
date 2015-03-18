@@ -1,5 +1,8 @@
 #projects.container
   h1 Projects
+  = each project in content
+    h1= project.name
+    
   //button click="openProjectFormModal" New Project
   = link-to 'New Project' 'organizations.projects.new' id="newProject"
   = outlet
