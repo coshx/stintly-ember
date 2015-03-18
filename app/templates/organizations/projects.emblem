@@ -1,2 +1,5 @@
 #projects.container
   h1 Projects
+  //button click="openProjectFormModal" New Project
+  = link-to 'New Project' 'organizations.projects.new' id="newProject"
+  = outlet
