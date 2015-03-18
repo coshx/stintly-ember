@@ -1,0 +1,6 @@
+#projects.container
+  button click="openNewProjectModal" New Project
+  
+  h1 Projects
+  = each project in content
+    h3= project.name

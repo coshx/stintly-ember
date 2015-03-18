@@ -6,7 +6,7 @@ header
     if currentUser
       = link-to 'Dashboard' 'organizations.dashboard' currentUser.firstOrganizationId
       = link-to 'People' 'organizations.people' currentUser.firstOrganizationId
-      = link-to 'Projects' 'organizations.projects' currentUser.firstOrganizationId
+      = link-to 'Projects' 'organizations.projects.index' currentUser.firstOrganizationId
 
       click-drop-down
         #user-dropdown.ui.dropdown.pointing.top.left

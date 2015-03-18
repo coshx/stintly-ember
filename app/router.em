@@ -12,6 +12,7 @@ Router.map ->
     @route('dashboard', path: '/dashboard')
     @route('people', path: '/people')
     @route('projects', path: '/projects', ->
-      @route('new', path: '/new'))
+      @route('index', path: '/')
+    )
 
 `export default Router`
