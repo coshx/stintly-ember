@@ -1,0 +1,6 @@
+#destroy-project.ui.modal
+  i.icon.close
+
+  .content
+    h2 Are you sure?
+    a click="destroy" Delete Project

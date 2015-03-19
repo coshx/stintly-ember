@@ -1,6 +1,14 @@
 #projects.container
   button click="openNewProjectModal" New Project
-  
+
   h1 Projects
-  = each project in content
-    h3= project.name
+  section.projects
+    = each project in content
+      div.project-listing
+        project.name
+        project.client
+        project.description
+        project.start_date
+        project.duration_weeks
+        div.project-buttons
+          button{ action "openEditProjectModal" project.id on="click" } Edit

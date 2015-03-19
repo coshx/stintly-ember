@@ -1,0 +1,15 @@
+#new-project.ui.modal
+  i.icon.close
+
+  .content
+    #modal-flash
+      each flash in controller.flashManager.modalMessages
+        flash-message message=flash.message type=flash.type
+
+    form.ui.form submit="submit"
+      = input name value=name label="Project name"
+      = input description label="Description"
+      = input duration_weeks label="Duration (in weeks)"
+      = input start_date
+      = input client label="Client name"
+      = submit "Save project" class="skyblue"
