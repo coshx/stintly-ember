@@ -10,12 +10,9 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
     @organization_id = @indexController.store.parent
     console.log 'initing!'
     @set('model', @store.createRecord('project', parent: @organization_id))
-  
   actions:
-
     submit: ->
       self = @
-
       @model.save().then((response) ->
         self.send('closeModal')
         self.indexController.model.unshiftObject(self.model)
@@ -26,7 +23,6 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
   validations:
     name:
       presence: true
-
     client:
       presence: true
 

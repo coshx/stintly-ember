@@ -10,6 +10,8 @@
       = input name label="Project name"
       = input description label="Description"
       = input duration_weeks label="Duration (in weeks)"
-      = input start_date
+      div.ember-view.date.start_date.field
+        label.ember-view.start_date Start date
+        = date-picker date=start_date format="MM-DD-YYYY" valueFormat="date" label="Start date"
       = input client label="Client name"
       = submit "Save project" class="skyblue"
