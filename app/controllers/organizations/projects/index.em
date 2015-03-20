@@ -7,14 +7,14 @@ class OrganizationsProjectsIndexController extends Ember.ArrayController
       @send('closeModal')
       Ember.run.end()
 
-      @send('openModal', 'projects/new', 'organizations/projects/new')
+      @send('openModal', 'projects/form', 'organizations/projects/new')
 
     openEditProjectModal: (project_id) ->
       Ember.run.begin()
       @send('closeModal')
       Ember.run.end()
       @project_id = project_id
-      @send('openModal', 'projects/edit', 'organizations/projects/edit')
+      @send('openModal', 'projects/form', 'organizations/projects/edit')
 
     openDestroyProjectModal: (project_id) ->
       Ember.run.begin()
