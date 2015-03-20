@@ -1,15 +1,22 @@
 #projects.container
-  button.new-project-button click="openNewProjectModal" id="newProject" New Project
+  
+  div.buttons
+    button.new-project-button.green click="openNewProjectModal" id="newProject" New Project
 
   h1 Projects
-  section.projects
+  table
+    tr
+      th Name
+      th Client
+      th Started
+      th Duration
+      th
     = each project in content
-      div.project-listing
-        project.name
-        project.client
-        project.description
-        = time-format project.start_date 'l'
-        project.duration_weeks
-        div.project-buttons
-          button{ action "openEditProjectModal" project.id on="click" } Edit
-          button{ action "openDestroyProjectModal" project.id on="click" } Delete
+      tr
+        td= project.name
+        td= project.client
+        td= time-format project.start_date "l"
+        td= project.duration_weeks
+        td
+          button.small{ action "openEditProjectModal" project.id on="click" } Edit
+          button.small.red{ action "openDestroyProjectModal" project.id on="click" } Delete

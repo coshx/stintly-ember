@@ -1,20 +1,32 @@
 button, input[type="submit"]
   display: inline-block
   background: transparent
-  border: 1px solid
-  border-radius: 0.2857rem
+  border: $base-border
+  border-radius: $base-border-radius
   padding: 0.78571em 1.5em 0.78571em
+  margin-right: .1em
+  margin-left: .1em
 
   &:disabled
-    color: rgba(0,0,0,.4) !important
-    background-color: #dcddde !important
+    color: $transparent-grey !important
+    background-color: $light-grey !important
     border: none
     opacity: 0.3 !important
-    
+
   &.skyblue
     color: $skyblue
-    border-color: $skyblue
 
   &.white
     color: white
     border-color: white
+
+  &.green
+    color: $green
+    border-color: $green
+
+  &.red
+    color: $red
+    border-color: $red
+
+button.small
+  padding: 0.196em .375em 0.196em

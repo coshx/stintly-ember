@@ -17,18 +17,4 @@ class OrganizationsProjectsDestroyController extends Ember.ObjectController
         self.flashManager.setFlash("Successfully destroy the project", "success")
       )
 
-      #@model.save().then((response) ->
-      #  self.send('closeModal')
-      #  self.indexController.model.unshiftObject(self.model)
-      #).catch((response) ->
-      #  self.flashManager.setModalFlash(response.responseJSON.error, 'error')
-      #)
-###
-  validations:
-    name:
-      presence: true
-
-    client:
-      presence: true
-###
 `export default OrganizationsProjectsDestroyController`
