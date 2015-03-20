@@ -7,14 +7,10 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
   init: ->
     @._super()
     @indexController = @get('controllers.organizations/projects/index')
-    #@organization_id = @indexController.store.parent
-    console.log 'initing!'
-    #@set('model', @store.find('project', @params.project_id))
-    #@set('model', @store.getById('project', 1))
     @project_id = @indexController.project_id
     @set('model', @store.getById('project', @project_id))
-  actions:
 
+  actions:
     submit: ->
       self = @
 

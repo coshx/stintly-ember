@@ -1,21 +1,21 @@
 `import config from '../../../config/environment'`
 
 class OrganizationsProjectsDestroyController extends Ember.ObjectController
-  #needs: ['organizations/projects/index']
+  needs: ['organizations/projects/index']
 
   init: ->
-    #@._super()
-    #@indexController = @get('controllers.organizations/projects/index')
-    #@organization_id = @indexController.store.parent
-    #console.log 'initing!'
-    #@set('model', @store.find('project'))
-  
-  actions:
+    @._super()
+    @indexController = @get('controllers.organizations/projects/index')
+    @project_id = @indexController.project_id
+    @set('model', @store.getById('project', @project_id))
 
+  actions:
     destroy: ->
       self = @
-      @model.destroyRecord()
-      self.send('closeModal')
+      @model.destroyRecord().then((response) ->
+        self.send('closeModal')
+        self.flashManager.setFlash("Successfully destroy the project", "success")
+      )
 
       #@model.save().then((response) ->
       #  self.send('closeModal')

@@ -1,5 +1,5 @@
 #projects.container
-  button click="openNewProjectModal" New Project
+  button.new-project-button click="openNewProjectModal" id="newProject" New Project
 
   h1 Projects
   section.projects
@@ -12,3 +12,4 @@
         project.duration_weeks
         div.project-buttons
           button{ action "openEditProjectModal" project.id on="click" } Edit
+          button{ action "openDestroyProjectModal" project.id on="click" } Delete
