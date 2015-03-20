@@ -1,4 +1,6 @@
 #people.container
+  button click="openNewPersonModal" New Person
+
   h1 People
 
   = each person in content
