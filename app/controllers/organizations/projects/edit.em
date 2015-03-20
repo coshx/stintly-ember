@@ -16,7 +16,6 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
 
       @model.save().then((response) ->
         self.send('closeModal')
-        self.indexController.model.unshiftObject(self.model)
       ).catch((response) ->
         self.flashManager.setModalFlash(response.responseJSON.error, 'error')
       )
