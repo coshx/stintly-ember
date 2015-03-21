@@ -25,5 +25,8 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
       presence: true
     client:
       presence: true
+    duration_weeks:
+      numericality:
+        allowBlank: true
 
 `export default OrganizationsProjectsNewController`
