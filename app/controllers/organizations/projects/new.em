@@ -10,6 +10,7 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
     @organization_id = @indexController.store.parent
     console.log 'initing!'
     @set('model', @store.createRecord('project', parent: @organization_id))
+
   actions:
     submit: ->
       self = @
@@ -19,6 +20,7 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
       ).catch((response) ->
         self.flashManager.setModalFlash(response.responseJSON.error, 'error')
       )
+      @set('model', @store.createRecord('project', parent: @organization_id))
 
   validations:
     name:
