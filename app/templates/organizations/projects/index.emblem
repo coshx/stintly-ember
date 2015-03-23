@@ -1,0 +1,22 @@
+#projects.container
+  
+  div.buttons
+    button.new-project-button.green click="openNewProjectModal" id="newProject" New Project
+
+  h1 Projects
+  table
+    tr
+      th Name
+      th Client
+      th Started
+      th Duration
+      th
+    = each project in content
+      tr
+        td= project.name
+        td= project.client
+        td= time-format project.start_date "l"
+        td= project.duration_weeks
+        td
+          button.small{ action "openEditProjectModal" project.id on="click" } Edit
+          button.small.red{ action "openDeleteProjectModal" project.id on="click" } Delete

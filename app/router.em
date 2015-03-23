@@ -11,6 +11,8 @@ Router.map ->
   @resource 'organizations', path: '/organizations/:id', ->
     @route('dashboard', path: '/dashboard')
     @route('people', path: '/people')
-    @route('projects', path: '/projects')
-  
+    @route('projects', path: '/projects', ->
+      @route('index', path: '/')
+    )
+
 `export default Router`

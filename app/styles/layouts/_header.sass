@@ -10,12 +10,12 @@ header
 
     a, a:hover
       color: white
-      font-size: 2em
+      font-size: $base-font-size + 1em
       margin-right: 1.5em
 
     #user-dropdown
       i.circular // user-icon
-        background-color:white
+        background-color: white
         color: $skyblue
         box-shadow: none !important
         margin-bottom: 10px
@@ -23,16 +23,16 @@ header
     .menu
       margin-top: 0px !important
 
-      .item        
+      .item
         a
           color: $skyblue
 
         &:hover
           background: $orange !important
-          
+
           a
              color: white !important
-    
+
     div.ember-view
       display: inline-block
       float: right
@@ -43,7 +43,7 @@ header
       padding-top: 1.2em
 
       button
-        font-size: 1.3em
+        font-size: $base-font-size + 0.3em
 
       button:first-child
         margin-right: 1.6em

@@ -6,5 +6,7 @@ class Project extends Model
   duration_weeks: DS.attr('number')
   start_date: DS.attr('date')
   client: DS.attr('string')
-  
+  created_at: DS.attr('date')
+  updated_at: DS.attr('date')
+
 `export default Project`
