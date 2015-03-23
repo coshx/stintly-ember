@@ -1,7 +1,21 @@
 #people.container
-  button click="openNewPersonModal" New Person
+  div.buttons
+    button.new-project-button.green click="openNewPersonModal" id="newPerson" New Person
 
   h1 People
 
-  = each person in content
-    h1= person.name
+  table
+    tr
+      th Name
+      th Title
+      th Hour Capacity
+      th
+
+    = each person in content
+      tr
+        td= person.name
+        td= person.title
+        td= person.hour_capacity
+        td
+          button.small{ action "openEditPersonModal" person.id on="click" } Edit
+          button.small.red{ action "openDeletePersonModal" person.id on="click" } Delete

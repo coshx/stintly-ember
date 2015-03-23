@@ -1,0 +1,13 @@
+#new-person.ui.modal
+  i.icon.close
+
+  .content
+    #modal-flash
+      each flash in controller.flashManager.modalMessages
+        flash-message message=flash.message type=flash.type
+
+    form.ui.form submit="submit"
+      = input name
+      = input title
+      = input hour_capacity 
+      = submit "Save project" class="skyblue"
