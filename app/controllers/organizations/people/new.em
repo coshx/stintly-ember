@@ -12,7 +12,7 @@ class OrganizationsPeopleNewController extends Ember.ObjectController with Ember
     submit: ->
       self = @
       indexController = @get('controllers.organizations/people/index')
-      
+
       @model.save().then((response) ->
         self.send('closeModal')
         indexController.model.unshiftObject(self.model)
@@ -29,6 +29,7 @@ class OrganizationsPeopleNewController extends Ember.ObjectController with Ember
       presence: true
 
     hour_capacity:
-      presence: true
+      numericality:
+        allowBlank: true
 
 `export default OrganizationsPeopleNewController`
