@@ -3,10 +3,12 @@
 class OrganizationsPeopleIndexController extends Ember.ArrayController  
   actions:
     openNewPersonModal: ->
-      Ember.run.begin()
-      @send('closeModal')
-      Ember.run.end()
+      self = @
 
-      @send('openModal', 'people/new', 'organizations/people/new')
+      $.get(config.APP.HOST + '/' + @store.parent + '/employees/new').then((response) ->
+        self.send('openModal', 'people/new', 'organizations/people/new')
+      ).fail((response) ->
+        console.log 'You are not authorized'
+      )
 
 `export default OrganizationsPeopleIndexController`

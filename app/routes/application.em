@@ -50,8 +50,7 @@ class ApplicationRoute extends Ember.Route
     closeModal: ->
       $(".modal").modal('hide')
       @send('disconnectModal')
-      
-      
+            
     disconnectModal: ->
       $('.ui.modal').remove()
       @disconnectOutlet(
