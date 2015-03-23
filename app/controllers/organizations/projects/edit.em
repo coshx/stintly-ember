@@ -1,14 +1,9 @@
 `import config from '../../../config/environment'`
 `import EmberValidations from 'ember-validations'`
 
-class OrganizationsProjectsNewController extends Ember.ObjectController with EmberValidations.Mixin
-  needs: ['organizations/projects/index']
-
-  init: ->
-    @._super()
-    @indexController = @get('controllers.organizations/projects/index')
-    @project_id = @indexController.project_id
-    @set('model', @store.getById('project', @project_id))
+class OrganizationsProjectsEditController extends Ember.ObjectController with EmberValidations.Mixin
+  setProject: (project_id) ->
+    @set('model', @store.getById('project', project_id))
 
   actions:
     submit: ->
@@ -27,4 +22,4 @@ class OrganizationsProjectsNewController extends Ember.ObjectController with Emb
     client:
       presence: true
 
-`export default OrganizationsProjectsNewController`
+`export default OrganizationsProjectsEditController`

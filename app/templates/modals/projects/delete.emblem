@@ -3,4 +3,4 @@
 
   .content
     h2 Are you sure?
-    button.red{ action "destroy" project.id on="click" } Delete Project
+    button.red{ action "delete" project.id on="click" } Delete Project

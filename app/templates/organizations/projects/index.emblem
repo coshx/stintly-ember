@@ -19,4 +19,4 @@
         td= project.duration_weeks
         td
           button.small{ action "openEditProjectModal" project.id on="click" } Edit
-          button.small.red{ action "openDestroyProjectModal" project.id on="click" } Delete
+          button.small.red{ action "openDeleteProjectModal" project.id on="click" } Delete
