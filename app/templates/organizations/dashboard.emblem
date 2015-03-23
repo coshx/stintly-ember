@@ -1,2 +1,7 @@
 #dashboard.container
   h1= name
+  ul.employee-listing
+    each employee in model.employees
+      li
+        span.employee-name= employee.name
+        span.employee-title= employee.title

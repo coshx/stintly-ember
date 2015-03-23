@@ -7,5 +7,5 @@ class Employee extends Model
   email: DS.attr('string')
   # user_id: DS.attr('number')
   # project_assignments: DS.hasMany('ProjectAssignments')
-  
+
 `export default Employee`
