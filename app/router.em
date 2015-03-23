@@ -10,7 +10,9 @@ Router.map ->
 
   @resource 'organizations', path: '/organizations/:id', ->
     @route('dashboard', path: '/dashboard')
-    @route('people', path: '/people')
+    @route('people', path: '/people', ->
+      @route('index', path: '/')
+    )
     @route('projects', path: '/projects', ->
       @route('index', path: '/')
     )

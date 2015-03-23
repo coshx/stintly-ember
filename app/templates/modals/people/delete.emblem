@@ -1,0 +1,6 @@
+#delete-person.ui.modal
+  i.icon.close
+
+  .content
+    h2 Are you sure?
+    button.red{ action "delete" project.id on="click" } Delete Person
