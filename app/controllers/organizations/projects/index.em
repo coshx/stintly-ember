@@ -11,12 +11,26 @@ class OrganizationsProjectsIndexController extends Ember.ArrayController
 
   actions:
     openNewProjectModal: ->
-      @newController.setOrganization(@model.store.parent)
-      @send('openModal', 'projects/form', 'organizations/projects/new')
+      self = @
+      organizationId = @store.parent
+
+      $.get(config.APP.HOST + '/' + organizationId + '/projects/new').then((response) ->
+        self.newController.setOrganization(organizationId)
+        self.send('openModal', 'projects/form', 'organizations/projects/new')
+      ).fail((response) ->
+        console.log 'You are not authorized'
+      )
 
     openEditProjectModal: (project_id) ->
-      @editController.setProject(project_id)
-      @send('openModal', 'projects/form', 'organizations/projects/edit')
+      self = @
+      organizationId = @store.parent
+
+      $.get(config.APP.HOST + '/' + organizationId + '/projects/' + project_id + '/edit').then((response) ->
+        self.editController.setProject(project_id)
+        self.send('openModal', 'projects/form', 'organizations/projects/edit')
+      ).fail((response) ->
+        console.log 'You are not authorized'
+      )
 
     openDeleteProjectModal: (project_id) ->
       @deleteController.setProject(project_id)

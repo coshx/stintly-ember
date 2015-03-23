@@ -22,8 +22,15 @@ class OrganizationsPeopleIndexController extends Ember.ArrayController
       )
 
     openEditPersonModal: (person_id) ->
-      @editController.setPerson(person_id)
-      @send('openModal', 'people/form', 'organizations/people/edit')
+      self = @
+      organizationId = @store.parent
+      
+      $.get(config.APP.HOST + '/' + organizationId + '/employees/' + person_id + '/edit').then((response) ->
+        self.editController.setPerson(person_id)
+        self.send('openModal', 'people/form', 'organizations/people/edit')
+      ).fail((response) ->
+        console.log 'You are not authorized'
+      )
 
     openDeletePersonModal: (person_id) ->
       @deleteController.setPerson(person_id)

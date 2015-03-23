@@ -2,6 +2,8 @@
 `import EmberValidations from 'ember-validations'`
 
 class OrganizationsProjectsNewController extends Ember.ObjectController with EmberValidations.Mixin
+  needs: ['organizations/people/index']
+
   setOrganization: (organization_id) ->
     @set('model', @store.createRecord('project', parent: organization_id))
 

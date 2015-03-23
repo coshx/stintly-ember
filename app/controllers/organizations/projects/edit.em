@@ -4,7 +4,7 @@
 class OrganizationsProjectsEditController extends Ember.ObjectController with EmberValidations.Mixin
   setProject: (project_id) ->
     @set('model', @store.getById('project', project_id))
-
+    
   actions:
     submit: ->
       self = @
