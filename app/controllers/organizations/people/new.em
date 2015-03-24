@@ -25,9 +25,6 @@ class OrganizationsPeopleNewController extends Ember.ObjectController with Ember
     name:
       presence: true
 
-    title:
-      presence: true
-
     hour_capacity:
       numericality:
         allowBlank: true
