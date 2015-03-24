@@ -1,2 +1,26 @@
 #dashboard
-  height: 30em
+  #calendar
+
+    .calendar-row
+      @include row()
+      padding-top: 1.5em
+      padding-bottom: 1.5em
+      .employee
+        @include span-columns(4)
+
+      .dates
+        @include span-columns(8)
+
+  #new-person
+    @include row()
+    @include span-columns(12)
+
+    form
+      margin-top: 1.25em
+      margin-bottom: 1.25em
+      .field
+        label
+          display: none !important
+        display: inline
+        input
+          width: inherit

@@ -1,11 +1,17 @@
 #dashboard.container
-  h1= name
-  
-  div.employees
-    ul.employee-listing
-      each employee in model.employees
-        li
-          span.employee-name= employee.name
-          span.employee-title= employee.title
+  h1= organization.name
 
-    button.green{ action "openNewPersonModal" model.id target="controllers.organizations/people/index" on="click" } id="newPerson" New Person
+  div#calendar
+    each person in people
+      div.calendar-row
+        div.employee
+          person.name
+        div.dates
+
+  div#new-person
+    form.ui.form submit="createPerson"
+      = input newName src=newName label="" placeholder="Name"
+      = input newTitle srcn=newTitle label="" placeholder="Title"
+      = input newCapacity srcn=newCapacity label="" placeholder="Hours Capacity"
+      = submit "Add person" disabled=disabled class="green small"
+
