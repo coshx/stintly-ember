@@ -1,7 +1,9 @@
 #dashboard.container
   h1= name
-  ul.employee-listing
-    each employee in model.employees
-      li
-        span.employee-name= employee.name
-        span.employee-title= employee.title
+  div.employees
+    ul.employee-listing
+      each employee in model.employees
+        li
+          span.employee-name= employee.name
+          span.employee-title= employee.title
+    button.green{ action "openNewPersonModal" model.id target="controllers.organizations/people/index" on="click" } id="newPerson" New Person

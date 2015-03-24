@@ -10,9 +10,10 @@ class OrganizationsPeopleIndexController extends Ember.ArrayController
     @deleteController = @get('controllers.organizations/people/delete')
 
   actions:
-    openNewPersonModal: ->
+    openNewPersonModal: (organizationId) ->
       self = @
-      organizationId = @store.parent
+      organizationId = @store.parent if organizationId == null or organizationId == undefined
+      
 
       $.get(config.APP.HOST + '/' + organizationId + '/employees/new').then((response) ->
         self.newController.setOrganization(organizationId)
