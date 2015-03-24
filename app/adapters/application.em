@@ -12,6 +12,7 @@ class ApplicationAdapter extends DS.ActiveModelAdapter
     @ajax(@buildURL(type.typeKey), 'GET', { data: query })
 
   find: (store, type, id, record) ->
+    @parentUrl = if store.parent then store.parent else ''
     actionUrl = if store.action then store.action else ''
     @ajax(@buildURL(type.typeKey, id, record) + '/' + actionUrl, 'GET')
 
