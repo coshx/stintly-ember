@@ -10,4 +10,4 @@
       = input name
       = input title
       = input hour_capacity 
-      = submit "Save project" class="skyblue"
+      = submit "Add person" class="skyblue"
