@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function calendarHeader() {
+export function calendarHeader(weekCount) {
 
   var openTag = '<div class="week">';
   var closeTag = '</div>';
@@ -26,7 +26,7 @@ export function calendarHeader() {
     }
   }
 
-  for (var i = 1; i < 6; i++) {
+  for (var i = 1; i < weekCount + 1; i++) {
     startWeek = startWeek.add(7, 'days');
     element += buildElement(startWeek);
   }
