@@ -1,14 +1,20 @@
 #dashboard
   #calendar
 
+    #top-row
+      @include row()
+      @include span-columns(8)
+      @include shift(4)
+
     .calendar-row
       @include row()
       padding-top: 1.5em
       padding-bottom: 1.5em
       .employee
         @include span-columns(4)
+        font-size: 1.25em
 
-      .dates
+      .dates,
         @include span-columns(8)
 
   #new-person

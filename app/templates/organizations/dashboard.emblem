@@ -2,6 +2,8 @@
   h1= organization.name
 
   div#calendar
+    div#top-row
+      = calendar-header
     each person in people
       div.calendar-row
         div.employee
