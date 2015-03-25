@@ -1,11 +1,10 @@
 #dashboard
   #top-row
-    | Calendar dates go here
-
-  div#calendar
-    div#top-row
+    #search-bar
+    #weeks
       = calendar-header
-      
+
+
   #people
     each person in people
       person-row person=person

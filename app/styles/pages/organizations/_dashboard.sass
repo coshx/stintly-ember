@@ -5,7 +5,20 @@
     height: 10%
     background-color: $grey-black
     color: white
+
+
+    #search-bar, #weeks
+      height: 100%
+
+    #search-bar
+      @include span-columns(2)
+
+    #weeks
+      @include span-columns(10)
     
+      .week
+        display: inline-block
+        
   #people
     height: 90%
     overflow: scroll
