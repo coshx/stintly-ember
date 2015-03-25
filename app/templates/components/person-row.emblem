@@ -1,0 +1,14 @@
+if person.isNew
+  #new-person-button click="renderNewPersonForm" + Add Person
+  
+  form.ui.form#new-person-form
+    = input name noLabel=true placeholder="Name"
+    = input title noLabel=true placeholder="Title"
+    = input capacity noLabel=true placeholder="Hours Capacity"
+    = input email noLabel=true placeholder="Email"
+    = submit "Add person" class="green small"
+
+else
+  .person-info
+    = person.name
+  .assignments

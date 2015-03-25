@@ -1,4 +1,4 @@
-#people.container
+#people-index.container
   div.buttons
     button.new-project-button.green click="openNewPersonModal" id="newPerson" New Person
 

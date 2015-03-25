@@ -2,10 +2,12 @@
 
 class OrganizationDashboardRoute extends Ember.Route with AuthenticatedRoute
   model: (params, transition) ->
-    @store.find('organization', id: transition.params.organizations.id, action: 'dashboard')
+    @organizationId = transition.params.organizations.id
+    @store.find('organization', id: @organizationId, action: 'dashboard')
 
   setupController: (controller, model) ->
     @._super(controller, model)
     controller.set('people', model.employees)
+    controller.set('new_person', @store.createRecord('employee', parent: @organizationId))
 
 `export default OrganizationDashboardRoute`

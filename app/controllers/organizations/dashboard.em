@@ -7,6 +7,9 @@ class OrganizationsDashboardController extends Ember.ObjectController
   ).property('newName')
 
   actions:
+    renderNewPersonForm: ->
+      console.log 'hmm?'
+
     createPerson: ->
       self = @
       newPerson =
@@ -24,5 +27,6 @@ class OrganizationsDashboardController extends Ember.ObjectController
   validations:
     name:
       presence: true
+
 `export default OrganizationsDashboardController`
 

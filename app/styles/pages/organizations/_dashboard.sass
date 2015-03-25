@@ -1,5 +1,46 @@
 #dashboard
+  height: 80vh
+
+  #top-row
+    height: 10%
+    background-color: $grey-black
+    color: white
+    
+  #people
+    height: 90%
+    overflow: scroll
+        
+    .person
+      width: 100%
+      height: 5em
+
+      .person-info, #new-person-button, #new-person-form
+        @include span-columns(2)
+        font-size: 1.5em
+        @include padding(1em null 1em 1em)
+      
+      .person-info
+        border-bottom: 1px solid $transparent-grey
+        background-color: $light-grey
+        display: inline-block
+        height: 100%
+
+      #new-person-button
+        background-color: $skyblue
+        color: white
+        font-style: italic
+        cursor: pointer
+
+      #new-person-form
+        display: none
+
+      .assignments
+        @include span-columns(10)
+
+
+
   #calendar
+    @include span-columns(10)
 
     #top-row
       @include row()
@@ -10,23 +51,10 @@
       @include row()
       padding-top: 1.5em
       padding-bottom: 1.5em
-      .employee
+
+      .employe
         @include span-columns(4)
         font-size: 1.25em
 
       .dates,
         @include span-columns(8)
-
-  #new-person
-    @include row()
-    @include span-columns(12)
-
-    form
-      margin-top: 1.25em
-      margin-bottom: 1.25em
-      .field
-        label
-          display: none !important
-        display: inline
-        input
-          width: inherit
