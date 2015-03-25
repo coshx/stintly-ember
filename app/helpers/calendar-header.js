@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export function calendarHeader() {
 
-  var openTag = '<div class="date">';
+  var openTag = '<div class="week">';
   var closeTag = '</div>';
   var shortFormat = 'D';
   var longFormat = 'MMM D';
