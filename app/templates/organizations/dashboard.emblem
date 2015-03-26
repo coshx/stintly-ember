@@ -2,7 +2,7 @@
   #top-row
     #search-bar
     #weeks
-      = calendar-header 6
+      calendar-header
 
 
   #people
