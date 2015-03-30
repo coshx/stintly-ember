@@ -1,10 +1,11 @@
 `import config from '../../../config/environment'`
-`import EmberValidations from 'ember-validations'`
+# `import EmberValidations from 'ember-validations'`
 
-class OrganizationsPeopleEditController extends Ember.ObjectController with EmberValidations.Mixin
-  setPerson: (person_id) ->
-    @set('model', @store.getById('employee', person_id))
-
+class OrganizationsProjectsEditController extends Ember.ObjectController 
+  # with EmberValidations.Mixin
+  setProject: (project_id) ->
+    @set('model', @store.getById('project', project_id))
+    
   actions:
     submit: ->
       self = @
@@ -19,10 +20,7 @@ class OrganizationsPeopleEditController extends Ember.ObjectController with Embe
     name:
       presence: true
 
-    title:
+    client:
       presence: true
 
-    hour_capacity:
-      presence: true
-
-`export default OrganizationsPeopleEditController`
+`export default OrganizationsProjectsEditController`

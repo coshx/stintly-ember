@@ -1,6 +1,7 @@
-`import EmberValidations from 'ember-validations'`
+# `import EmberValidations from 'ember-validations'`
 
-class PersonRow extends Ember.Component with EmberValidations
+class PersonRow extends Ember.Component 
+  # with EmberValidations
   classNames: ['person']
   
   didInsertElement: ->

@@ -3,15 +3,6 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-  sassOptions: {
-    inputFile: 'app.sass',
-    outputFile: 'app.css',
-    includePaths: [
-      'bower_components/bourbon/app/assets/stylesheets/',
-      'bower_components/neat/app/assets/stylesheets/',
-      'vendor/semantic-ui-sass/stylesheets/semantic-ui'
-    ]
-  }
 });
 
 // Use `app.import` to add additional libraries to the generated
@@ -41,6 +32,6 @@ app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.ttf', { destDir: "as
 app.import('vendor/semantic-ui-sass/fonts/semantic-ui/icons.woff', { destDir: "assets/fonts/semantic-ui" })
 
 // Ember EasyForm
-app.import('vendor/ember-easyForm.js')
+// app.import('vendor/ember-easyForm.js')
 
 module.exports = app.toTree();

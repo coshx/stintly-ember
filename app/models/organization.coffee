@@ -1,6 +1,6 @@
 `import Model from '../overrides/model'`
 
-class Organization extends Model
+Organization = Model.extend
   name: DS.attr('string')
   employees: DS.hasMany('employee')
 

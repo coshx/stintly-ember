@@ -1,10 +1,9 @@
 `import config from '../config/environment'`
 
-class ApplicationRoute extends Ember.Route
+ApplicationRoute = Ember.Route.extend
   beforeModel: ->
     @._super()
     @authManager.authenticate()
-
     return @csrf.fetchToken()
 
   actions:

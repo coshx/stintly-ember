@@ -1,6 +1,6 @@
 `import config from '../config/environment'`
 
-class AuthenticationManager extends Ember.Object
+AuthenticationManager = Ember.Object.extend
   authentication: null
   currentUser: null
 
@@ -10,8 +10,8 @@ class AuthenticationManager extends Ember.Object
 
   # Set current user and authentication
   setCurrentUser: (user) ->
-    @currentUser = @store.createRecord('current_user', user)
-
+    @set('currentUser', @store.createRecord('current_user', user))
+    
   # Set up ajax header to be sent with every ajax request
   setAjaxHeader: (authenticationToken, userId) ->
     $.ajaxSetup(headers: { "X-User-Token": userId + ":" + authenticationToken })
@@ -52,15 +52,14 @@ class AuthenticationManager extends Ember.Object
 
   # Ensure that when the current user changes, we store the data in localStorage
   # in order for us to load the user when the browser is refreshed
-  +observer currentUser
-  currentUserObserver: (->
-    if @currentUser.authentication_token and @currentUser.id
-      localStorage.setItem("authentication_token", @currentUser.authentication_token)
+  currentUserObserver: Ember.observer(->
+    if @currentUser
+      localStorage.setItem("authentication_token", @currentUser.get('authentication_token'))
       localStorage.setItem("user_id", @currentUser.id)
     else
       localStorage.removeItem("authentiation_token")
       localStorage.removeItem("user_id")
-  )
+  , 'currentUser')
 
 `export default AuthenticationManager`
 

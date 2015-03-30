@@ -1,10 +1,9 @@
-class ApplicationController extends Ember.Controller
+ApplicationController = Ember.Controller.extend
   init: ->
     @_super()
 
-  +computed authManager.currentUser
-  currentUser: ->
-    @authManager.currentUser
+  currentUser: Ember.computed 'authManager.currentUser', ->
+    return @authManager.currentUser
 
   actions:
     openSignUpModal: ->

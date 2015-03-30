@@ -1,10 +1,19 @@
 `import config from '../config/environment'`
-`import EmberValidations from 'ember-validations'`
+`import Saving from 'ember-easy-form-extensions/mixins/controllers/saving'`
 
-class LoginController extends Ember.ObjectController with EmberValidations.Mixin
+LoginController = Ember.ObjectController.extend(
+  Saving,
+    validations:
+      email:
+        presence: true
+
+      password:
+        presence: true
+
+
   model: {}
 
-  actions:
+  actions: 
     openSignUpModal: ->
       Ember.run.begin()
       @send('closeModal')
@@ -25,13 +34,5 @@ class LoginController extends Ember.ObjectController with EmberValidations.Mixin
         if response.status == 401
           self.flashManager.setModalFlash(response.responseJSON.error, 'error')
       )
-
-
-  validations:
-    email:
-      presence: true
-
-    password:
-      presence: true
-
+)
 `export default LoginController`

@@ -1,6 +1,6 @@
 `import DS from 'ember-data'`
 
-class Store extends DS.Store
+Store = DS.Store.extend
   namespace: null
   action: null
 

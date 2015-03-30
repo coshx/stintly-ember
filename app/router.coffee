@@ -1,6 +1,6 @@
 `import config from './config/environment'`
 
-class Router extends Ember.Router
+Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->

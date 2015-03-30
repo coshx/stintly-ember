@@ -11,7 +11,8 @@
       th Started
       th Duration
       th
-    = each project in content
+
+    = each project in model
       tr
         td= project.name
         td= project.client

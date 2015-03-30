@@ -1,6 +1,6 @@
 `import Model from '../overrides/model'`
 
-class Employee extends Model
+Employee = Model.extend
   name: DS.attr('string')
   title: DS.attr('string')
   hour_capacity: DS.attr('number')

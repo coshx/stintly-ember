@@ -1,6 +1,7 @@
-`import AuthenticatedRoute from '../../mixins/routes/authenticated-route'`
+# `import AuthenticatedRoute from '../../mixins/routes/authenticated-route'`
 
-class OrganizationDashboardRoute extends Ember.Route with AuthenticatedRoute
+OrganizationDashboardRoute = Ember.Route.extend 
+  # with AuthenticatedRoute
   model: (params, transition) ->
     @organizationId = transition.params.organizations.id
     @store.find('organization', id: @organizationId, action: 'dashboard')

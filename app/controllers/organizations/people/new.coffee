@@ -1,7 +1,8 @@
 `import config from '../../../config/environment'`
-`import EmberValidations from 'ember-validations'`
+# `import EmberValidations from 'ember-validations'`
 
-class OrganizationsPeopleNewController extends Ember.ObjectController with EmberValidations.Mixin
+class OrganizationsPeopleNewController extends Ember.ObjectController 
+  # with EmberValidations.Mixin
   needs: ['organizations/people/index']
 
   setOrganization: (organization_id) ->

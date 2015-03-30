@@ -1,7 +1,8 @@
-`import EmberValidations from 'ember-validations'`
+# `import EmberValidations from 'ember-validations'`
 `import config from '../config/environment'`
 
-class SignUpController extends Ember.ObjectController with EmberValidations.Mixin
+class SignUpController extends Ember.ObjectController 
+  # with EmberValidations.Mixin
   model: {}
 
   actions:

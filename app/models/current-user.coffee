@@ -1,11 +1,10 @@
 `import Model from '../overrides/model'`
 
-class CurrentUser extends Model
+CurrentUser = Model.extend
   email: DS.attr('string')
   authentication_token: DS.attr('string')
 
-  +computed roles_with_organization
-  firstOrganizationId: ->
+  firstOrganizationId: Ember.computed 'roles_with_organization', ->
     if @roles_with_organization[0]
       return @roles_with_organization[0].organization_id
   

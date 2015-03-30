@@ -1,6 +1,6 @@
 `import Model from '../overrides/model'`
 
-class Project extends Model
+Project = Model.extend
   name: DS.attr('string')
   description: DS.attr('string')
   duration_weeks: DS.attr('number')

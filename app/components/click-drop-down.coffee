@@ -8,4 +8,8 @@ class ClickDropDown extends Ember.Component
       action: 'select'
     )
 
+  actions:
+    logout: ->
+      console.log 'logging out!'
+
 `export default ClickDropDown`

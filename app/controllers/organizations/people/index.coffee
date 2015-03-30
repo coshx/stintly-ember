@@ -1,6 +1,6 @@
 `import config from '../../../config/environment'`
 
-class OrganizationsPeopleIndexController extends Ember.ArrayController  
+OrganizationsPeopleIndexController = Ember.ArrayController.extend
   needs: ['organizations/people/new', 'organizations/people/edit', 'organizations/people/delete']
 
   init: ->
